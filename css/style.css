@@ -39,33 +39,38 @@ a:hover { text-decoration:underline; }
   margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  justify-content: flex-start;
   align-items: center;
+  gap: 0.7rem;
 }
 
 .icon {
-  width: 42px;
-  height: 42px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: white;
-  border: 1px solid #e6e6e6;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease;
-}
-
-.icon:hover {
-  transform: scale(1.1);
-  border-color: #bbb;
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .icon svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
 }
 
+.icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+}
+
+/* optional: keep icons nicely spaced on small screens */
+@media (max-width: 600px) {
+  .icons { justify-content: center; }
+}
 
 .meta { color:var(--muted); font-size:.9rem; margin-top: .5rem; }
 
