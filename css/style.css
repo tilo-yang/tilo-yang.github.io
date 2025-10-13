@@ -1,53 +1,70 @@
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  background: #f9f9f9;
-  color: #333;
+/* Simple Peng-Wu style: minimal, centered, readable */
+:root{
+  --max-width: 980px;
+  --accent: #0b5f8a;
+  --muted: #666;
+  --bg: #fbfbfb;
+  --card-bg: #fff;
 }
-header {
-  background: #004c7f;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-}
-nav a {
-  color: white;
-  margin: 0 1rem;
-  text-decoration: none;
-}
-nav a:hover {
-  text-decoration: underline;
-}
-main {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-.bio img {
-  float: left;
-  width: 150px;
-  margin-right: 1rem;
-  border-radius: 50%;
-}
-.btn {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background: #0077b6;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-}
-.btn:hover {
-  background: #48cae4;
-}
-footer {
-  text-align: center;
-  background: #004c7f;
-  color: white;
-  padding: 1rem;
-  margin-top: 2rem;
+
+* { box-sizing: border-box; }
+html,body { height:100%; margin:0; padding:0; font-family: "Inter", Arial, Helvetica, sans-serif; color:#111; background:var(--bg); }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; }
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 2rem; }
+
+.skip { position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+.skip:focus { left:1rem; top:1rem; width:auto; height:auto; padding:.5rem; background:#fff; border:1px solid #ddd; z-index:999; }
+
+.site-header { background: white; border-bottom: 1px solid #eee; position: sticky; top:0; z-index:50; }
+.header-inner { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1.25rem 1rem; }
+.name { font-family: "Georgia", serif; font-size:1.6rem; margin:0; color:#0b3042; }
+.title { margin: .25rem 0 0 0; color:var(--muted); font-size:.95rem; }
+
+.top-nav a { margin-left:1rem; color:var(--muted); font-size:.95rem; }
+.top-nav a:hover { color:var(--accent); }
+
+.section { padding: 3rem 0; background: transparent; }
+.section-title { font-family: "Georgia", serif; font-size:1.4rem; margin:0 0 0.5rem 0; color:#0b3042; }
+.section-intro { margin: 0 0 1rem 0; color:var(--muted); }
+
+.home-section .home-inner { display:flex; gap:2rem; align-items:center; flex-wrap:wrap; }
+.photo img { width:170px; height:170px; object-fit:cover; border-radius:8px; border:1px solid #eee; display:block; }
+.intro { flex:1; min-width:260px; }
+
+.lead { margin-top:0; color:#222; line-height:1.5; font-size:1rem; }
+
+.icons { margin:1rem 0; display:flex; gap:.6rem; align-items:center; flex-wrap:wrap; }
+.icon { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:6px; background:#fff; border:1px solid #eee; color:var(--muted); text-decoration:none; }
+.icon svg { width:18px; height:18px; fill:currentColor; display:block; }
+.sr { position:absolute; left:-9999px; }
+
+.meta { color:var(--muted); font-size:.9rem; margin-top: .5rem; }
+
+.grid { display:grid; grid-template-columns: 1fr; gap:1rem; margin-top:1rem; }
+@media(min-width:820px){ .grid { grid-template-columns: repeat(2, 1fr); } }
+
+.card { background:var(--card-bg); border-radius:8px; padding:1rem; box-shadow: 0 6px 18px rgba(8,20,30,0.04); border:1px solid #f0f0f0; }
+.card h3 { margin-top:0; font-size:1rem; color:#0b3042; }
+
+.pub-year { margin-bottom:1.25rem; }
+.pub-year h3 { margin:0 0 .35rem 0; color:var(--accent); font-size:1.05rem; }
+.pub-year ol { margin:0; padding-left:1.15rem; color:#222; }
+.pub-year ol li { margin:0.45rem 0; line-height:1.45; font-size:.96rem; color:#222; }
+
+.present-year { margin-bottom:1rem; }
+
+.grid.two-col { display:grid; gap:1rem; grid-template-columns: 1fr; }
+@media(min-width:900px){ .grid.two-col { grid-template-columns: 1fr 1fr; } }
+
+.note { margin-top:1rem; color:var(--muted); font-size:.95rem; }
+
+.site-footer { border-top:1px solid #eee; background: white; padding:1.25rem 0; margin-top:3rem; text-align:center; color:var(--muted); font-size:.95rem; }
+
+/* small screens */
+@media(max-width:640px){
+  .header-inner { flex-direction:column; align-items:flex-start; gap:.5rem; }
+  .top-nav { width:100%; display:flex; gap:.5rem; overflow:auto; }
+  .name { font-size:1.25rem; }
 }
