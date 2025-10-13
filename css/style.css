@@ -15,6 +15,73 @@ body {
   margin: 0;
   padding: 0;
 }
+/* =======================
+   COLOR THEMES
+   ======================= */
+
+:root {
+  --bg: #ffffff;
+  --text: #222222;
+  --accent: #0b5f8a;
+  --border: #e2e2e2;
+  --card-bg: #ffffff;
+}
+
+body.dark {
+  --bg: #0d1117;
+  --text: #e6edf3;
+  --accent: #58a6ff;
+  --border: #30363d;
+  --card-bg: #161b22;
+}
+
+/* Apply theme variables globally */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: var(--accent);
+}
+
+/* Borders and cards use variables */
+.card,
+.site-header,
+.site-footer {
+  background-color: var(--card-bg);
+  border-color: var(--border);
+}
+
+/* =======================
+   TOGGLE BUTTON STYLE
+   ======================= */
+
+#theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 1rem;
+  padding: 0.3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+#theme-toggle:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+body.dark #theme-toggle:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+#theme-icon path {
+  fill: var(--text);
+  transition: fill 0.2s ease;
+}
 
 /* Containers */
 .container {
