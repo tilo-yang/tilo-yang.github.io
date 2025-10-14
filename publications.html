@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Publications — Tilo H. Yang</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <div class="name-block">
-        <h1 class="name">Tilo H. Yang</h1>
-      </div>
+      <div class="name-block"><h1 class="name">Tilo H. Yang</h1></div>
       <nav class="top-nav">
         <a href="index.html">Home</a>
         <a href="research.html">Research</a>
@@ -19,6 +17,11 @@
         <a href="presentations.html">Presentations</a>
         <a href="cv.html">CV</a>
       </nav>
+      <button id="theme-toggle" aria-label="Toggle dark mode">
+        <svg id="theme-icon" viewBox="0 0 24 24" width="22" height="22">
+          <path d="M12 2a1 1 0 0 1 0 2 8 8 0 1 0 8 8 1 1 0 0 1 2 0A10 10 0 1 1 12 2z"/>
+        </svg>
+      </button>
     </div>
   </header>
 
@@ -84,15 +87,13 @@
           <li><b>T. H. Yang</b>, J. Y. Wu, Z. X. Zhu, C. R. Kao. <i>Micromechanical behavior of single-crystalline Cu₆Sn₅ by picoindentation</i>. <em>Journal of Materials Science</em> 52, 7166-7174, 2017.</li>
           <li>H. W. Yang, J. Y. Wu, Z. X. Zhu, <b>T. H. Yang</b>, C. R. Kao. <i>Effects of surface diffusion and reaction-induced volume shrinkage on morphological evolutions of micro-joints</i>. <em>Materials Chemistry and Physics</em> 191, 13-19, 2017.</li>
         </ul>
-      </div>
-
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025 Tilo H. Yang — <a href="mailto:hwyang1105@gmail.com">hwyang1105@gmail.com</a></p>
-    </div>
-  </footer>
+  <footer class="site-footer"><div class="container"><p>&copy; 2025 Tilo H. Yang</p></div></footer>
+
+  <script>
+  document.addEventListener("DOMContentLoaded",()=>{const t=document.getElementById("theme-toggle"),e=document.getElementById("theme-icon");"dark"===localStorage.getItem("theme")&&(document.body.classList.add("dark"),e.innerHTML='<path d="M21.64 13a9 9 0 1 1-9-9 7 7 0 0 0 9 9z"/>'),t.addEventListener("click",()=>{const a=document.body.classList.toggle("dark");localStorage.setItem("theme",a?"dark":"light"),e.innerHTML=a?'<path d="M21.64 13a9 9 0 1 1-9-9 7 7 0 0 0 9 9z"/>':'<path d="M12 2a1 1 0 0 1 0 2 8 8 0 1 0 8 8 1 1 0 0 1 2 0A10 10 0 1 1 12 2z"/>'})});
+  </script>
 </body>
 </html>
