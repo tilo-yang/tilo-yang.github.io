@@ -14,15 +14,16 @@
         <h1 class="name">Tilo H. Yang</h1>
         <p class="title">Postdoctoral Associate — Research Laboratory of Electronics, MIT</p>
       </div>
+
       <nav class="top-nav">
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="research.html">Research</a>
         <a href="publications.html">Publications</a>
         <a href="presentations.html">Presentations</a>
         <a href="cv.html">CV</a>
       </nav>
 
-      <!-- 🌗 Dark/Light mode toggle button -->
+      <!-- 🌗 Dark/Light mode toggle -->
       <button id="theme-toggle" aria-label="Toggle dark mode">
         <svg id="theme-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
           <path d="M12 2a1 1 0 0 1 0 2 8 8 0 1 0 8 8 1 1 0 0 1 2 0A10 10 0 1 1 12 2z"/>
@@ -35,20 +36,19 @@
   <main id="main">
     <section class="section home-section">
       <div class="container home-inner">
-        <!-- Photo -->
         <aside class="photo">
           <img src="images/profile.jpg" alt="Tilo H. Yang" />
         </aside>
 
-        <!-- Intro -->
         <div class="intro">
           <p class="lead">
-            Dr. Tilo H. Yang is a Postdoctoral Associate at the Research Laboratory of Electronics (RLE), Massachusetts Institute of Technology, working with Prof. Jing Kong. 
-            His research focuses on integrating ultrawide-bandgap and 2D materials for nanoelectronic devices, exploring ferroelectric switching phenomena, 
-            and advancing heterogeneous microelectronic packaging for next-generation integrated systems.
+            Dr. Tilo H. Yang is a Postdoctoral Associate at the Research Laboratory of Electronics (RLE), 
+            Massachusetts Institute of Technology, working with Prof. Jing Kong. 
+            His research focuses on integrating ultrawide-bandgap and 2D materials for nanoelectronic devices, 
+            exploring ferroelectric switching phenomena, and advancing heterogeneous microelectronic packaging for next-generation integrated systems.
           </p>
 
-          <!-- ICONS -->
+          <!-- Social icons -->
           <div class="icons">
             <!-- Email -->
             <a class="icon" href="mailto:hwyang1105@gmail.com" title="Email">
@@ -101,7 +101,30 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
+      <p>&copy; 2025 Tilo H. Yang — <a href="mailto:hwyang1105@gmail.com">hwyang1105@gmail.com</a></p>
     </div>
   </footer>
+
+  <!-- 🌗 Light/Dark Mode Script -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("theme-toggle");
+    const icon = document.getElementById("theme-icon");
+
+    // Restore previous theme
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark");
+      icon.innerHTML = '<path d="M21.64 13a9 9 0 1 1-9-9 7 7 0 0 0 9 9z"/>'; // moon
+    }
+
+    toggle.addEventListener("click", () => {
+      const dark = document.body.classList.toggle("dark");
+      localStorage.setItem("theme", dark ? "dark" : "light");
+      icon.innerHTML = dark
+        ? '<path d="M21.64 13a9 9 0 1 1-9-9 7 7 0 0 0 9 9z"/>' // moon
+        : '<path d="M12 2a1 1 0 0 1 0 2 8 8 0 1 0 8 8 1 1 0 0 1 2 0A10 10 0 1 1 12 2z"/>'; // sun
+    });
+  });
+  </script>
 </body>
 </html>
