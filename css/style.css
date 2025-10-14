@@ -68,57 +68,75 @@ h2.section-title {
   margin-bottom: 1.5rem;
 }
 
-/* =======================================
-   HEADER + NAVIGATION
-   ======================================= */
+/* =========================================
+   HEADER — name left, nav centered, toggle right
+   ========================================= */
 .site-header {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  background-color: var(--card-bg);
-  border-bottom: 1px solid var(--border);
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 0;
-  width: 100%;
-  max-width: 960px;
-}
-
-.name-block {
-  flex: 1;
-}
-
-.name {
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 0.2rem;
-}
-
-.title {
-  font-size: 0.95rem;
-  color: var(--text);
-  opacity: 0.75;
-}
-
-.top-nav a {
-  margin: 0 0.75rem;
-  font-size: 0.95rem;
-  font-weight: 500;
-  position: relative;
-}
-.top-nav a.active::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
+  position: fixed;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 2px;
-  background-color: var(--accent);
+  height: 3.5rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* 🔹 Name (top-left corner) */
+.site-brand {
+  position: absolute;
+  left: 1rem;
+  top: 0.9rem;
+}
+.site-brand .brand-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text);
+  text-decoration: none;
+}
+.site-brand .brand-name:hover {
+  opacity: 0.7;
+}
+
+/* 🔹 Navigation (centered) */
+.top-nav {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.top-nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.top-nav a:hover,
+.top-nav a.active {
+  opacity: 1;
+  font-weight: 500;
+}
+
+/* 🔹 Theme toggle (top-right) */
+#theme-toggle {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+#theme-icon path {
+  fill: var(--text);
+}
+
+/* Add body padding so content isn't under header */
+body {
+  padding-top: 3.8rem;
 }
 
 /* =======================================
