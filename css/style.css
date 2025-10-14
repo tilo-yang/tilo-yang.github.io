@@ -206,9 +206,14 @@ p.meta {
 
 .home-inner {
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   gap: 2rem;
+  padding: 2.5rem 0;
+}
+
+.intro {
+  flex: 1;
+  min-width: 250px;
 }
 
 .photo img {
