@@ -9,37 +9,41 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
+      <div class="name-block"><h1 class="name">Tilo H. Yang</h1></div>
       <nav class="top-nav">
         <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
+        <a href="research.html" class="active">Research</a>
         <a href="publications.html">Publications</a>
         <a href="presentations.html">Presentations</a>
         <a href="cv.html">CV</a>
       </nav>
+      <button id="theme-toggle" aria-label="Toggle dark mode">
+        <svg id="theme-icon" viewBox="0 0 24 24" width="22" height="22"><path d="M12 2a1 1 0 0 1 0 2 8 8 0 1 0 8 8 1 1 0 0 1 2 0A10 10 0 1 1 12 2z"/></svg>
+      </button>
     </div>
   </header>
 
   <main class="section">
     <div class="container">
       <h2 class="section-title">Research</h2>
-      <p>Research interests include low-dimensional materials, nanoelectronic devices, microelectronic packaging,
-      and scanning transmission electron microscopy.</p>
+      <p>My research focuses on integrating ultrawide-bandgap and 2D materials, ferroelectric transistors, and nanoelectronic device engineering.</p>
 
-      <div class="grid">
+      <div class="grid two-col">
         <div class="card">
           <h3>Current Projects</h3>
           <ul>
             <li>Synthesis of ultrawide-bandgap 2D materials for nanoelectronics</li>
-            <li>Ferroelectric switching in rhombohedral-stacked MoS<sub>2</sub></li>
+            <li>Ferroelectric switching in rhombohedral-stacked MoS₂</li>
           </ul>
         </div>
+
         <div class="card">
           <h3>Technical Expertise</h3>
           <ul>
-            <li>STEM, SEM, TEM analysis</li>
+            <li>STEM/TEM/SEM characterization</li>
             <li>E-beam lithography and device fabrication</li>
             <li>Raman/PL spectroscopy and electrical testing</li>
-            <li>Microelectronic packaging & heterogeneous integration</li>
+            <li>Microelectronic packaging and integration</li>
           </ul>
         </div>
       </div>
@@ -47,5 +51,23 @@
   </main>
 
   <footer class="site-footer"><div class="container"><p>&copy; 2025 Tilo H. Yang</p></div></footer>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("theme-toggle");
+    const icon = document.getElementById("theme-icon");
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark");
+      icon.innerHTML = '<path d="M21.64 13a9 9 0 1 1-9-9 7 7 0 0 0 9 9z"/>';
+    }
+    toggle.addEventListener("click", () => {
+      const dark = document.body.classList.toggle("dark");
+      localStorage.setItem("theme", dark ? "dark" : "light");
+      icon.innerHTML = dark
+        ? '<path d="M21.64 13a9 9 0 1 1-9-9 7 7 0 0 0 9 9z"/>'
+        : '<path d="M12 2a1 1 0 0 1 0 2 8 8 0 1 0 8 8 1 1 0 0 1 2 0A10 10 0 1 1 12 2z"/>';
+    });
+  });
+  </script>
 </body>
 </html>
