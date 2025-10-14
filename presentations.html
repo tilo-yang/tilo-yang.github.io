@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Conference Presentations — Tilo H. Yang</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <div class="name-block">
-        <h1 class="name">Tilo H. Yang</h1>
-      </div>
+      <div class="name-block"><h1 class="name">Tilo H. Yang</h1></div>
       <nav class="top-nav">
         <a href="index.html">Home</a>
         <a href="research.html">Research</a>
@@ -20,62 +17,53 @@
         <a href="presentations.html" class="active">Presentations</a>
         <a href="cv.html">CV</a>
       </nav>
+      <button id="theme-toggle" aria-label="Toggle dark mode">
+        <svg id="theme-icon" viewBox="0 0 24 24" width="22" height="22">
+          <path d="M12 2a1 1 0 0 1 0 2 8 8 0 1 0 8 8 1 1 0 0 1 2 0A10 10 0 1 1 12 2z"/>
+        </svg>
+      </button>
     </div>
   </header>
 
-  <!-- Main -->
   <main class="section">
     <div class="container">
       <h2 class="section-title">Conference Presentations</h2>
-      <p class="section-intro">
-        Selected conference talks and posters (by year).
-      </p>
 
-      <div class="present-year">
-        <h3>2025</h3>
+      <div class="present-year"><h3>2025</h3>
         <ul>
-          <li>Oral — <strong>Sliding ferroelectric memory based on rhombohedral-stacked molybdenum disulfide<strong>, MRS Fall Meeting 2025 (Boston, MA, Nov 30-Dec 5 2025).</li>
-          <li>Poster — <strong>Sliding ferroelectric memory based on rhombohedral-stacked MoS₂</strong>, MARC 2025 (Boston, MA, Jan 14–15 2025).</li>
+          <li>Oral: Sliding ferroelectric memory based on rhombohedral-stacked molybdenum disulfide — MRS Fall Meeting 2025, Boston, MA.</li>
+          <li>Poster: Sliding ferroelectric memory based on rhombohedral-stacked MoS₂ — MARC 2025, Boston MA.</li>
         </ul>
       </div>
 
-      <div class="present-year">
-        <h3>2024</h3>
+      <div class="present-year"><h3>2024</h3>
         <ul>
-          <li>Poster — <strong>Atomically-thin ferroelectric transistors made from rhombohedral-stacked MoS₂</strong>, MARC 2024 (Boston, MA, Jan 23–24 2024).</li>
+          <li>Poster: Atomically-thin ferroelectric transistors made from rhombohedral MoS₂ — MARC 2024, Boston MA.</li>
         </ul>
       </div>
 
-      <div class="present-year">
-        <h3>2023</h3>
+      <div class="present-year"><h3>2023</h3>
         <ul>
-          <li>Poster — <strong>A BEOL-compatible process for monolithic 3D integration of MoS₂ FET and Si FinFET</strong>, Taiwan Physics Society Annual Meeting 2023.</li>
-          <li>Oral — <strong>Monolithic 3D integration of MoS₂ FET and Si FinFET</strong>, RPGR 2022 (presented 2023).</li>
+          <li>Poster: BEOL-Compatible Process for 3D Integration of MoS₂ FET and Si FinFET — TPS Annual Meeting 2023.</li>
+          <li>Oral: BEOL-Compatible Process for 3D Integration — RPGR 2022 (presented 2023).</li>
         </ul>
       </div>
 
-      <div class="present-year">
-        <h3>2019</h3>
+      <div class="present-year"><h3>2019 and earlier</h3>
         <ul>
-          <li>Oral — <strong>A single bonding process for organic-inorganic substrate integration in IoT</strong>, ECTC 2019 (Las Vegas, NV).</li>
-          <li>Oral — <strong>Homogeneous and heterogeneous bonding in flexible electronics</strong>, ICEP 2019 (Niigata, Japan).</li>
-        </ul>
-      </div>
-
-      <div class="present-year">
-        <h3>2018 and earlier</h3>
-        <ul>
-          <li>Multiple oral and poster presentations at ICEP 2018, ECTC 2017, and international workshops.</li>
+          <li>Oral: A Single Bonding Process for Organic-Inorganic Integration — ECTC 2019 (Las Vegas NV).</li>
+          <li>Oral: Homogeneous and Heterogeneous Bonding in Flexible Electronics — ICEP 2019 (Niigata, Japan).</li>
         </ul>
       </div>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025 Tilo H. Yang — <a href="mailto:hwyang1105@gmail.com">hwyang1105@gmail.com</a></p>
-    </div>
-  </footer>
+  <footer class="site-footer"><div class="container"><p>&copy; 2025 Tilo H. Yang</p></div></footer>
+
+  <script>
+  document.addEventListener("DOMContentLoaded",()=>{const t=document.getElementById("theme-toggle"),e=document.getElementById("theme-icon");"dark"===localStorage.getItem("theme")&&(document.body.classList.add("dark"),e.innerHTML='<path d="M21.64 13a9 9 0 1 1-9-9 7 7 0 0 0 9 9z"/>'),t.addEventListener("click",()=>{const a=document.body.classList.toggle("dark");localStorage.setItem("theme",a?"dark":"light"),e.innerHTML=a?'<path d="M21.64 13a9 9 0 1 1-9-9 7 7 0 0 0 9 9z"/>':'<path d="M12 2a1 1 0 0 1 0 2 8 8 0 1 0 8 8 1 1 0 0 1 2 0A10 10 0 1 1 12 2z"/>'})});
+  </script>
 </body>
 </html>
+
+          <li>Oral — <strong>Sliding ferroelectric memory based on rhombohedral-stacked molybdenum disulfide<strong>, MRS Fall Meeting 2025 (Boston, MA, Nov 30-Dec 5 2025).</li>
